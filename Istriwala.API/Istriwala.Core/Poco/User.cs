@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Istriwala.Core.Constants;
 
 namespace Istriwala.Core.Poco
 {
@@ -18,7 +19,7 @@ namespace Istriwala.Core.Poco
         #region Public Properties
 
         public int Id { get; set; }
-        public int UserName { get; set; }
+        public string UserName { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
@@ -30,6 +31,8 @@ namespace Istriwala.Core.Poco
         public DateTime Updated { get; set; }
         public bool IsActive { get; set; }
         public bool IsDelete { get; set; }
+
+        public List<Roles> Roles { get; set; } 
 
         #endregion Public Properties
     }

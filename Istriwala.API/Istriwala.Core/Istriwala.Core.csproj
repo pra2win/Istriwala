@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Poco\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -20,20 +20,24 @@ REMARKS:
 
 ALTER PROCEDURE [dbo].[CreateUser]
 	@Id	int,
-	@UserName int,
+	@UserName varchar(256),
 	@Password varchar(256),
 	@Name varchar(256),
 	@Address varchar(250),
 	@EmailId varchar(20),
 	@MobileNo varchar(20),
 	@Gender varchar(50),
+	@Roles varchar(max),
 	@ProfileUrl varchar(50)=NULL
+
 AS
 BEGIN
 SET NOCOUNT ON
 	
-	INSERT INTO Users (Id
-	,UserName
+	DECLARE @RolesDataTable TABLE (ITEM VARCHAR(MAX))
+	INSERT INTO @RolesDataTable SELECT item FROM dbo.fnSplit(@Roles, ',')
+
+	INSERT INTO Users (UserName
 	,[Password]
 	,[Name]
 	,[Address]
@@ -41,8 +45,7 @@ SET NOCOUNT ON
 	,MObileNo
 	,Gender
 	,ProfileUrl)
-	VALUES (@Id
-	,@UserName
+	VALUES (@UserName
 	,@Password
 	,@Name
 	,@Address
@@ -51,6 +54,13 @@ SET NOCOUNT ON
 	,@Gender
 	,@ProfileUrl)
 
+	SET @Id = SCOPE_IDENTITY()
+
+	INSERT INTO UserRoles(UserId, RoleId)
+	SELECT @Id, cast(r.item as int)
+	FROM @RolesDataTable r
+
+	RETURN @Id
 END
 GO
 

@@ -15,7 +15,7 @@ GO
 REMARKS:
 
 -- PJ 9.29.2018: Initial Creation
-
+-- PJ 9.30.2018: Added Roles
 **************************************************************************************/
 
 ALTER PROCEDURE [dbo].[GetUser]
@@ -24,8 +24,22 @@ AS
 BEGIN
 SET NOCOUNT ON
 	
-	SELECT * FROM [dbo].[Users] where Id=@id;
+SELECT [Id]
+	,[UserName]
+	,[Password]
+	,[Name]
+	,[Address]
+	,[EmailId]
+	,[MobileNo]
+	,[Gender]
+	,[ProfileUrl]
+	,[Created]
+	,[Updated]
+	,[IsActive]
+	,[IsDelete]
+FROM [dbo].[Users] WHERE Id = @id;
 
+SELECT RoleId FROM UserRoles WHERE UserId = @id
 END
 GO
 

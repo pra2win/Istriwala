@@ -36,13 +36,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StoredProcedures\CreateUser.sql" />
+    <Content Include="Functions\fnSplit.sql" />
+    <Content Include="StoredProcedures\proc_CreateUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Template\Sptemplate.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StoredProcedures\GetUser.sql" />
+    <Content Include="StoredProcedures\proc_GetUser.sql" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
