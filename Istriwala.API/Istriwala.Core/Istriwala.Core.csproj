@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Interfaces\IOrderRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Poco\Order.cs" />
     <Compile Include="Poco\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

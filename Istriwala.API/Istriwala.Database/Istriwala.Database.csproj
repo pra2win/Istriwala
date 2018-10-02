@@ -45,6 +45,17 @@
   <ItemGroup>
     <Content Include="StoredProcedures\proc_GetUser.sql" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="StoredProcedures\PlaceOrder.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReleaseScript\UserTypeReleaseScript.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReleaseScript\ProductTypeReleaseScript.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReleaseScript\ForeignKeys.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

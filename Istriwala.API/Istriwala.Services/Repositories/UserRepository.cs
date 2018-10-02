@@ -68,9 +68,11 @@ namespace Istriwala.Services.Repositories
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             return user;
         }
+
+
     }
 }
