@@ -57,5 +57,8 @@
   <ItemGroup>
     <Content Include="ReleaseScript\ForeignKeys.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="StoredProcedures\Login.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
