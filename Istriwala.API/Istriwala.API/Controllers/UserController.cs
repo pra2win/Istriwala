@@ -38,13 +38,13 @@ namespace Istriwala.API.Controllers
            return Ok(user);
         }
 
-        [HttpGet]
-        [Route("getuser/{id}")]
-        public IHttpActionResult GetUser(int id)
-        {
-            var user=_repository.Get(id);
-            return Ok(user);
-        }
+        //[HttpGet]
+        //[Route("getuser/{id}")]
+        //public IHttpActionResult GetUser(int id)
+        //{
+        //    var user=_repository.Get(id);
+        //    return Ok(user);
+        //}
         #endregion Public API
     }
 }
